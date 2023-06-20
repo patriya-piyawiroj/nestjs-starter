@@ -1,0 +1,17 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// run yarn prisma db push to update
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://user:P%40ssw0rd@cluster0.lvb13de.mongodb.net/tasks?retryWrites=true&w=majority"
+}
+
+model notes {  
+    id     String   @id @default(auto()) @map("_id") @db.ObjectId  
+    note String 
+}
